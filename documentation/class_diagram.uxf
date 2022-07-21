@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>30</x>
+      <y>80</y>
+      <w>200</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>Administrator
+--
+-  admin_id:int
+-  admin_name:varchar_
+-  admin_username:varchar
+-  admin_password:varchar
+-  admin_emailid:varchar
+-  admin_phone:BIGINT
+--
++	manager_view()
++  view_restaurant_details()
++  update_profile()
++  restaurant_view()
+--
+Responsibilties
+-- restaurant_registration
+-- restaurant_deletion
+-- restaurant_updation
+-- manager_registration
+-- manager_deletion
+-- manager_updation
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>200</y>
+      <w>210</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>Manager
+--
+-  m_id: Int
+-  m_name:varchar
+-  m_username:varchar
+-  m_emailid: varchar
+-  res_loccode:varchar
+-  m_password: varchar
+-  m_phone:BIGINT
+--
++  view_items()
++  view_transaction_details()
++  view_profile()
+--
+Responsibilities
+-- add new item
+-- delete item
+-- update item
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>150</y>
+      <w>210</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>transaction
+--
+- admin_id : int  
+- user_name : varchar
+- user_phone : BIGINT
+- system_name : int
+- no_of_items : VARCHAR
+- items_ordered :varchar
+- order_datetime :datetime
+- amount : float
+- feedbacks : varchar
+--
++  send_message()
++  receive_message()
++  calc_total_amount()
++  receive_payment()
+--
+Responsibities
+-- send_order()
+-- receive_order()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>180</y>
+      <w>200</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>order_details
+--
+- id : int
+- sys_name: varchar
+- item_names : varchar
+- quantities : varchar
+- datetime : datetime 
+- status : int
+--
++  send_response()
++  get_response()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>0</y>
+      <w>210</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Employee
+--
+-  id: int
+-  username : varchar
+-  password : varchar
+--
++  login()
++  logout()
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>440</y>
+      <w>210</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>item_list
+--
+- item_id: int
+- item_name: varchar
+- item_pic:	varchar
+- item_cuisine: varchar
+- item_cooktype: varchar
+- item_basetaste: varchar
+- item_details: varchar
+- item_price: double
+- item_rating: double
+--
++ add_item()
++ delete_item()
++ update_item()
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>100</x>
+      <y>460</y>
+      <w>190</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>restaurant_details
+--
+- res_code: varchar
+- res_name:	varchar
+- res_city : varchar
+- res_loccode: varchar
+- res_man1: varchar
+- res_man2: varchar
+--
++ add_restaurant()
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>430</y>
+      <w>180</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Payment
+--
+-txn_id: varchar 
+_amount : float
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>50</y>
+      <w>120</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>220</x>
+      <y>140</y>
+      <w>120</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>100.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>380</y>
+      <w>70</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n</panel_attributes>
+    <additional_attributes>30.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>530</y>
+      <w>300</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>330</y>
+      <w>70</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>260</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>500</x>
+      <y>450</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>250</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>340</y>
+      <w>40</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>20.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
